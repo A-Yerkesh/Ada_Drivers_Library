@@ -37,7 +37,7 @@ Then we clone the Ada_Drivers_Library repository:
 
 Next, we use the project wizard to configure and generate the ADL project.
 
-The [project_wizard](script/project_wizard.py) provides an interface to
+The [project_wizard](../scripts/project_wizard.py) provides an interface to
 create an ADL project. This script will ask a series of questions to define the
 ADL configuration of your project and then generate the different files
 required to use ADL based on this configuration. The questions are for
@@ -72,7 +72,7 @@ The project wizard generates two files:
    definitions of configuration keys so that they can be used to inside the ADL
    code. For instance, the configuration key `Max_Mount_Points` is declared
    like so:
-   
+
    ```
    package ADL_Config is
       Max_Mount_Points : constant := 2; -- From default value
@@ -104,19 +104,19 @@ Here is an example of root project file:
 with "Ada_Drivers_Library/ada_drivers_library.gpr";
 
 project My_Project is
-  
+
   for Languages use ("Ada");
-  
+
   for Target use Ada_Drivers_Library'Target;
   for Runtime ("Ada") use Ada_Drivers_Library'Runtime ("Ada");
-  
+
   for Source_Dirs use ("src");
   for Main use ("main.adb");
-  
+
   for Object_Dir use "obj";
   for Exec_Dir use ".";
   for Create_Missing_Dirs use "True";
-  
+
   package Compiler renames Ada_Drivers_Library.Compiler;
 
 end My_Project;
