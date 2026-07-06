@@ -13,6 +13,7 @@ svd:
 	$(SVD2ADA_DIR)/bin/svd2ada $(SVD2ADA_DIR)/CMSIS-SVD/ST/STM32F46_79x.svd --boolean -o $(STM_DIR)/stm32f46_79x -p STM32_SVD --base-types-package HAL --gen-uint-always
 	$(SVD2ADA_DIR)/bin/svd2ada $(SVD2ADA_DIR)/CMSIS-SVD/ST/STM32F7x.svd --boolean -o $(STM_DIR)/stm32f7x -p STM32_SVD --base-types-package HAL --gen-uint-always
 	$(SVD2ADA_DIR)/bin/svd2ada $(SVD2ADA_DIR)/CMSIS-SVD/ST/STM32F7x9.svd --boolean -o $(STM_DIR)/stm32f7x9 -p STM32_SVD --base-types-package HAL --gen-uint-always
+	$(SVD2ADA_DIR)/bin/svd2ada $(SVD2ADA_DIR)/CMSIS-SVD/ST/STM32G0B1.svd --boolean -o $(STM_DIR)/stm32g0b1 -p STM32_SVD --base-types-package HAL --gen-uint-always
 
 	rm -rf $(CORTEX_DIR)/cm*
 	$(SVD2ADA_DIR)/bin/svd2ada $(SVD2ADA_DIR)/CMSIS-SVD/Cortex_M/cm0.svd --boolean -o $(CORTEX_DIR)/cm0 -p Cortex_M_SVD --base-types-package HAL --gen-uint-always
