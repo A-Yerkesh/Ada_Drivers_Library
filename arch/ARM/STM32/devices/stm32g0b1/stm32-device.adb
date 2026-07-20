@@ -29,6 +29,8 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
+with System; use System;
+
 with STM32_SVD.RCC; use STM32_SVD.RCC;
 
 package body STM32.Device is
