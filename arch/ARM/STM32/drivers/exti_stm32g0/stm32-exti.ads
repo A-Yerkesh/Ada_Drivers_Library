@@ -103,11 +103,25 @@ package STM32.EXTI is
    procedure Generate_SWI (Line : External_Line_Number)
      with Inline;
 
-   function External_Interrupt_Pending (Line : External_Line_Number)
+   function Any_External_Interrupt_Pending (Line : External_Line_Number)
      return Boolean
      with Inline;
 
-   procedure Clear_External_Interrupt (Line : External_Line_Number)
+   function Rising_Interrupt_Pending (Line : External_Line_Number)
+     return Boolean
+     with Inline;
+
+   function Falling_Interrupt_Pending (Line : External_Line_Number)
+     return Boolean
+     with Inline;
+
+   procedure Clear_Both_External_Interrupts (Line : External_Line_Number)
+     with Inline;
+
+   procedure Clear_Rising_Interrupt (Line : External_Line_Number)
+     with Inline;
+
+   procedure Clear_Falling_Interrupt (Line : External_Line_Number)
      with Inline;
 
    --  Available to all lines
