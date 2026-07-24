@@ -53,36 +53,18 @@ package STM32.EXTI is
       EXTI_Line_13,
       EXTI_Line_14,
       EXTI_Line_15,
-      EXTI_Line_16,
-      EXTI_Line_17,
-      EXTI_Line_18,
       EXTI_Line_19,
-      EXTI_Line_20,
       EXTI_Line_21,
-      EXTI_Line_22,
       EXTI_Line_23,
-      EXTI_Line_24,
       EXTI_Line_25,
       EXTI_Line_26,
-      EXTI_Line_27,
-      EXTI_Line_28,
-      EXTI_Line_29,
-      EXTI_Line_30,
-      EXTI_Line_31,
-      EXTI_Line_32,
-      EXTI_Line_33,
-      EXTI_Line_34,
-      EXTI_Line_35);
+      EXTI_Line_31);
 
    type External_Line_Type is (Configurable, Direct);
 
    Line_Types : constant array (External_Line_Number) of External_Line_Type :=
-     (EXTI_Line_0  .. EXTI_Line_18 => Configurable,
-      EXTI_Line_19                 => Direct,
-      EXTI_Line_20                 => Configurable,
-      EXTI_Line_21 .. EXTI_Line_33 => Direct,
-      EXTI_Line_34                 => Configurable,
-      EXTI_Line_35                 => Direct);
+     (EXTI_Line_0 .. EXTI_Line_15 => Configurable,
+      others                      => Direct);
 
    type External_Triggers is
      (Interrupt_Rising_Edge,
