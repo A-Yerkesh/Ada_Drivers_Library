@@ -137,4 +137,25 @@ package body STM32.Device is
       end loop;
    end Reset;
 
+   --------------------------------
+   -- GPIO_Port_Representation --
+   --------------------------------
+
+   function GPIO_Port_Representation (Port : GPIO_Port) return UInt8 is
+   begin
+      if Port'Address = GPIOA_Base then
+         return 0;
+      elsif Port'Address = GPIOB_Base then
+         return 1;
+      elsif Port'Address = GPIOC_Base then
+         return 2;
+      elsif Port'Address = GPIOD_Base then
+         return 3;
+      elsif Port'Address = GPIOF_Base then
+         return 5;
+      else
+         raise Unknown_Device;
+      end if;
+   end GPIO_Port_Representation;
+
 end STM32.Device;

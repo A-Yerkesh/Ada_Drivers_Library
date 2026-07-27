@@ -71,6 +71,9 @@ package STM32.Device is
    GPIO_F : aliased GPIO_Port
      with Import, Volatile, Address => GPIOF_Base;
 
+   function GPIO_Port_Representation (Port : GPIO_Port) return UInt8
+     with Inline;
+
    PA0  : aliased GPIO_Point := (GPIO_A'Access, Pin_0);
    PA1  : aliased GPIO_Point := (GPIO_A'Access, Pin_1);
    PA2  : aliased GPIO_Point := (GPIO_A'Access, Pin_2);
