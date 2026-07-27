@@ -448,11 +448,12 @@ package body STM32.GPIO is
       Trigger : EXTI.External_Triggers)
    is
       use STM32.EXTI;
-      Line : constant External_Line_Number :=
-        External_Line_Number'Val (GPIO_Pin'Pos (This.Pin));
+      Index   : constant GPIO_Pin_Index := GPIO_Pin'Pos (This.Pin);
+      Line    : constant External_Line_Number :=
+        External_Line_Number'Val (Index);
       Port_Id : constant UInt8 := GPIO_Port_Representation (This.Periph.all);
    begin
-      case GPIO_Pin'Pos (This.Pin) is
+      case Index is
          when 0 =>
             EXTI_Periph.EXTICR1.EXTI0_7 := Port_Id;
          when 1 =>
