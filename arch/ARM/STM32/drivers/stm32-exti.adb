@@ -87,9 +87,9 @@ package body STM32.EXTI is
    begin
       EXTI_Periph.EMR.MR.Arr (Index)  := True;
       EXTI_Periph.RTSR.TR.Arr (Index) :=
-        Trigger in Interrupt_Rising_Edge  | Interrupt_Rising_Falling_Edge;
+        Trigger in Event_Rising_Edge  | Event_Rising_Falling_Edge;
       EXTI_Periph.FTSR.TR.Arr (Index) :=
-        Trigger in Interrupt_Falling_Edge | Interrupt_Rising_Falling_Edge;
+        Trigger in Event_Falling_Edge | Event_Rising_Falling_Edge;
    end Enable_External_Event;
 
    ----------------------------
